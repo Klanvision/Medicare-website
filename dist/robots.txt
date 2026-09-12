@@ -1,0 +1,9 @@
+# Vighnaharta HealthNova Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /patient/dashboard
+Disallow: /api/
+
+# Sitemap Location
+Sitemap: https://www.vighnahartahealthnova.com/sitemap.xml

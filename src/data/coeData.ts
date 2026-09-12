@@ -1,0 +1,507 @@
+export interface COEStat {
+  label: string;
+  value: string;
+}
+
+export interface COETechnology {
+  name: string;
+  desc: string;
+  icon: string;
+}
+
+export interface COEProcedure {
+  name: string;
+  desc: string;
+}
+
+export interface COEFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface COEArticle {
+  slug?: string;
+  title: string;
+  category: string;
+  readTime: string;
+  date: string;
+  imageUrl: string;
+}
+
+export interface COEItem {
+  slug: string;
+  title: string;
+  subtitle: string;
+  bannerImage: string;
+  overview: string;
+  stats: COEStat[];
+  technology: COETechnology[];
+  conditions: string[];
+  procedures: COEProcedure[];
+  facilities: string[];
+  faqs: COEFAQ[];
+  articles?: COEArticle[];
+  associatedDoctorIds: string[];
+}
+
+export const COE_DATA: COEItem[] = [
+  {
+    slug: 'heart-vascular',
+    title: 'Heart & Vascular Institute',
+    subtitle: 'Interventional Cardiology, TAVI & Cardiac Surgery',
+    bannerImage: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80',
+    overview: 'The MEDICARE Heart & Vascular Institute is Western India’s premier cardiac sciences destination. Featuring a 24/7 STEMI angioplasty emergency unit, Philips Azurion 7 Cath Lab, and hybrid cardiac operating suites, our team has performed over 12,000 interventional procedures with a 99.4% clinical success rate.',
+    stats: [
+      { label: 'Coronary Angioplasties', value: '12,000+' },
+      { label: 'Clinical Success Rate', value: '99.4%' },
+      { label: 'STEMI Door-to-Balloon Time', value: '< 35 Mins' },
+      { label: '24/7 Dedicated CCU Beds', value: '30 Beds' },
+    ],
+    technology: [
+      { name: 'Philips Azurion 7 Cath Lab', desc: 'Ultra-low radiation dose 3D interventional cardiac imaging.', icon: 'HeartPulse' },
+      { name: 'Transcatheter Valve (TAVI/TAVR)', desc: 'No-cut valve replacement technology for elderly patients.', icon: 'ShieldCheck' },
+      { name: 'IVUS & FFR Precision Angioplasty', desc: 'Intravascular ultrasound to measure artery blockage thickness.', icon: 'Activity' },
+    ],
+    conditions: [
+      'Coronary Artery Disease & Heart Attack',
+      'Aortic Valve Stenosis & Regurgitation',
+      'Heart Failure & Cardiomyopathy',
+      'Cardiac Arrhythmias & Atrial Fibrillation',
+    ],
+    procedures: [
+      { name: 'Complex Primary Radial Angioplasty', desc: '24/7 emergency wrist-artery clot extraction and drug-eluting stenting.' },
+      { name: 'Transcatheter Aortic Valve Implantation (TAVI)', desc: 'Incisionless valve replacement performed under local anesthesia.' },
+      { name: 'Minimally Invasive Coronary Bypass (CABG)', desc: 'Off-pump beating heart bypass surgery through small side incision.' },
+    ],
+    facilities: [
+      '24/7 STEMI Emergency Cardiac ICU',
+      'Hybrid Cath-Operating Theater Suite',
+      'Advanced Electrophysiology (EP) Lab',
+      'Dedicated Cardiac Rehabilitation Wing',
+    ],
+    articles: [
+      {
+        title: 'TAVI vs Open Heart Surgery: Recovery & Valve Durability',
+        category: 'CARDIOLOGY',
+        readTime: '6 Min Read',
+        date: 'Sept 04, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Recognizing Warning Signs of Heart Attack in Women',
+        category: 'PREVENTIVE CARDIOLOGY',
+        readTime: '5 Min Read',
+        date: 'Aug 28, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What makes MEDICARE’s STEMI Emergency unique?',
+        answer: 'Our average Door-to-Balloon time is under 35 minutes, exceeding international guidelines. Our Cath Lab team is on standby 24/7.',
+      },
+    ],
+    associatedDoctorIds: ['doc-anand-deshmukh'],
+  },
+  {
+    slug: 'neuroscience',
+    title: 'Institute of Neurosciences',
+    subtitle: 'Brain Surgery, Stroke Thrombolysis & Spine Center',
+    bannerImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80',
+    overview: 'The Institute of Neurosciences brings together world-renowned neurosurgeons and stroke neurologists. Armed with 3D intraoperative neuro-navigation, endoscopic skull-base surgery, and a 24/7 acute stroke rapid response team, we deliver gold-standard neurological care.',
+    stats: [
+      { label: 'Neuro Surgeries Conducted', value: '8,500+' },
+      { label: 'Acute Stroke Rapid Response', value: '24/7' },
+      { label: 'Brain Tumor Resection Precision', value: '99.1%' },
+    ],
+    technology: [
+      { name: '3D Neuro-Navigation System', desc: 'Real-time GPS mapping of brain tissue during microsurgery.', icon: 'Brain' },
+      { name: 'Intraoperative Neuromonitoring (IONM)', desc: 'Continuous monitoring of cranial nerves during tumor excision.', icon: 'Activity' },
+    ],
+    conditions: [
+      'Acute Ischemic & Hemorrhagic Stroke',
+      'Brain Tumors & Meningiomas',
+      'Trigeminal Neuralgia & Facial Pain',
+      'Lumbar Disc Herniation & Sciatica',
+    ],
+    procedures: [
+      { name: 'Microsurgical Brain Tumor Resection', desc: 'High precision 3D navigation guided tumor debulking.' },
+      { name: 'Endoscopic Keyhole Spine Surgery', desc: 'Stitchless disc surgery allowing discharge in 24 hours.' },
+    ],
+    facilities: [
+      'Dedicated Neuro Intensive Care Unit (NICU)',
+      '24/7 Stroke Thrombolysis Response Suite',
+      'Intraoperative Neuro MRI & CT Scan',
+    ],
+    articles: [
+      {
+        title: 'Recognizing Stroke FAST: 4 Signs That Could Save a Life',
+        category: 'NEUROLOGY',
+        readTime: '5 Min Read',
+        date: 'Sept 02, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Endoscopic vs Open Spine Surgery: Recovery Time Explained',
+        category: 'NEUROSURGERY',
+        readTime: '6 Min Read',
+        date: 'Aug 20, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How does 3D Neuro-navigation benefit brain surgery?',
+        answer: 'It acts like a high-definition GPS for the neurosurgeon, pinpointing brain tumors down to millimeter accuracy while protecting vital speech and motor areas.',
+      },
+    ],
+    associatedDoctorIds: ['doc-sunita-kulkarni'],
+  },
+  {
+    slug: 'cancer-care',
+    title: 'Comprehensive Cancer Care Institute',
+    subtitle: 'Surgical, Medical & Precision Radiation Oncology',
+    bannerImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
+    overview: 'Our Comprehensive Cancer Care Institute offers personalized multi-disciplinary tumor board evaluations, targeted immunotherapy regimens, organ-preserving robotic cancer surgeries, and Varian TrueBeam precision radiotherapy.',
+    stats: [
+      { label: 'Cancer Patients Treated', value: '15,000+' },
+      { label: 'Organ-Preserving Surgeries', value: '92%' },
+      { label: 'Tumor Board Evaluations', value: '100%' },
+    ],
+    technology: [
+      { name: 'Varian TrueBeam Radiotherapy', desc: 'Sub-millimeter targeted radiation destroying cancer tumors in minutes.', icon: 'Ribbon' },
+      { name: 'Targeted Immunotherapy Infusion', desc: 'Monoclonal antibody therapies customized to tumor DNA.', icon: 'Sparkles' },
+    ],
+    conditions: ['Breast & Gynecological Cancers', 'Lung & Thoracic Malignancies', 'Gastrointestinal & Colorectal Cancers'],
+    procedures: [
+      { name: 'Targeted Immunotherapy & Chemotherapy', desc: 'Day-care infusion regimens with minimal systemic side effects.' },
+      { name: 'Organ-Preserving Oncoplastic Surgery', desc: 'Tumor excision while restoring natural tissue aesthetics.' },
+    ],
+    facilities: ['Chemotherapy Day Care Lounge', 'Varian Linear Accelerator Vault', 'NABL Molecular Pathology Lab'],
+    articles: [
+      {
+        title: 'Breast Cancer Screening: Self-Exams & Mammograms Explained',
+        category: 'ONCOLOGY',
+        readTime: '5 Min Read',
+        date: 'Sept 01, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'How Immunotherapy is Transforming Cancer Care in 2026',
+        category: 'MEDICAL ONCOLOGY',
+        readTime: '6 Min Read',
+        date: 'Aug 24, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is a Multi-Disciplinary Tumor Board?',
+        answer: 'Every cancer patient’s case is collectively evaluated by surgical, medical, and radiation oncologists to customize the most effective treatment protocol.',
+      },
+    ],
+    associatedDoctorIds: ['doc-meera-joshi'],
+  },
+  {
+    slug: 'women-child-care',
+    title: 'Women & Child Care Institute',
+    subtitle: 'High-Risk Obstetrics, Level-3 NICU & Pediatrics',
+    bannerImage: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=1200&q=80',
+    overview: 'A holistic care center for mothers and children. Featuring painless delivery suites, a 24/7 Level-3 Neonatal ICU for pre-term infants, pediatric surgery, and laparoscopic gynecology.',
+    stats: [
+      { label: 'Healthy Babies Delivered', value: '10,000+' },
+      { label: 'Level-3 NICU Survival Rate', value: '98.6%' },
+    ],
+    technology: [
+      { name: 'Level-3 Giraffe Incubator NICU', desc: 'Climate controlled newborn life support for pre-terms.', icon: 'User' },
+      { name: '4D Fetal Anomaly Sonography', desc: 'High resolution 3D/4D ultrasound for prenatal screening.', icon: 'Heart' },
+    ],
+    conditions: ['High-Risk Pregnancy & Preeclampsia', 'Pre-term Newborn Care (< 28 Weeks)', 'Childhood Asthma & Infections'],
+    procedures: [
+      { name: 'Painless Labor & Delivery', desc: 'Epidural analgesia ensuring pain-free childbirth.' },
+      { name: 'Laparoscopic Gynae Surgery', desc: 'Keyhole fibroid and cyst removal with zero scars.' },
+    ],
+    facilities: ['LDR (Labor, Delivery, Recovery) Suites', 'Level-3 NICU & PICU Wing', 'Pediatric Emergency Lounge'],
+    articles: [
+      {
+        title: 'Newborn Care Guide: 10 Essential Tips for First-Time Parents',
+        category: 'PEDIATRICS',
+        readTime: '4 Min Read',
+        date: 'Sept 02, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Painless Labor: Everything You Need to Know About Epidurals',
+        category: 'MATERNITY',
+        readTime: '5 Min Read',
+        date: 'Aug 27, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What level of NICU care does MEDICARE provide?',
+        answer: 'We operate a Level-3 NICU equipped with neonatal ventilators, CPAP, and round-the-clock neonatologists capable of caring for extreme pre-terms.',
+      },
+    ],
+    associatedDoctorIds: ['doc-priya-nair', 'doc-kavita-rao'],
+  },
+  {
+    slug: 'orthopaedics-joint',
+    title: 'Orthopaedics & Joint Replacement Institute',
+    subtitle: 'Mako 3D Robotic Joint Surgery & Sports Medicine',
+    bannerImage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80',
+    overview: 'Pioneering robotic knee and hip joint replacements. Our Mako 3D robotic operating theater delivers sub-millimeter alignment accuracy, enabling patients to walk painlessly within 24 hours.',
+    stats: [
+      { label: 'Robotic Joint Replacements', value: '5,000+' },
+      { label: 'Walk on Day 1 Post-Op', value: '100%' },
+    ],
+    technology: [
+      { name: 'Mako 3D Robotic Arm System', desc: 'Haptic-guided robotic bone preparation for custom joint fit.', icon: 'Bone' },
+    ],
+    conditions: ['Severe Osteoarthritis of Knee & Hip', 'ACL & Ligament Tear', 'Complex Bone Trauma Fractures'],
+    procedures: [
+      { name: 'Mako 3D Robotic Total Knee Replacement', desc: 'Sub-millimeter implant placement with rapid recovery.' },
+      { name: 'Keyhole Knee Arthroscopy', desc: 'Endoscopic repair of ACL and meniscus tears.' },
+    ],
+    facilities: ['Dedicated Robotic Ortho OT', 'Advanced Physiotherapy Hydro-Lounge', 'Sports Rehab Center'],
+    articles: [
+      {
+        title: 'Mako Robotic Knee Replacement: Why 10,000+ Patients Choose It',
+        category: 'ORTHOPEDICS',
+        readTime: '5 Min Read',
+        date: 'Sept 01, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: '5 Exercises to Protect Your Knees from Early Osteoarthritis',
+        category: 'JOINT CARE',
+        readTime: '4 Min Read',
+        date: 'Aug 22, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why choose Mako Robotic Joint Replacement?',
+        answer: 'Mako robotics uses your custom CT scan to create a 3D model, preserving healthy bone and ligaments for a natural feeling joint that lasts 25+ years.',
+      },
+    ],
+    associatedDoctorIds: ['doc-rajesh-verma'],
+  },
+  {
+    slug: 'organ-transplant',
+    title: 'Organ Transplant Institute',
+    subtitle: 'Liver, Kidney & Heart Transplantation Center',
+    bannerImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1200&q=80',
+    overview: 'State-of-the-art organ transplantation institute offering living-donor and deceased-donor renal and liver transplants in HEPA-filtered cleanroom ICUs.',
+    stats: [
+      { label: 'Successful Kidney Transplants', value: '850+' },
+      { label: 'Transplant Survival Rate', value: '97.8%' },
+    ],
+    technology: [
+      { name: 'HEPA Positive-Pressure Transplant ICU', desc: 'Ultra-sterile air filtration preventing post-transplant infection.', icon: 'ShieldCheck' },
+    ],
+    conditions: ['End-Stage Renal Disease (ESRD)', 'End-Stage Liver Cirrhosis & Failure'],
+    procedures: [
+      { name: 'Laparoscopic Donor Nephrectomy', desc: 'Minimally invasive kidney retrieval for living donors.' },
+      { name: 'Living Donor Liver Transplantation', desc: 'Precision split-liver graft transplantation.' },
+    ],
+    facilities: ['HEPA Filtered Isolation Transplant ICUs', 'Dedicated Organ Preservation Suites'],
+    articles: [
+      {
+        title: 'Understanding Living Donor Kidney Transplants & Recovery',
+        category: 'TRANSPLANTOLOGY',
+        readTime: '6 Min Read',
+        date: 'Aug 30, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Living Liver Donation: Eligibility, Graft Regeneration & Safety',
+        category: 'LIVER TRANSPLANT',
+        readTime: '5 Min Read',
+        date: 'Aug 18, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the recovery time for a living kidney donor?',
+        answer: 'Living donors undergo laparoscopic donor nephrectomy, allowing hospital discharge in 3 to 4 days and full recovery in 2 weeks.',
+      },
+    ],
+    associatedDoctorIds: ['doc-sanjay-patil', 'doc-amita-singh'],
+  },
+  {
+    slug: 'advanced-surgery',
+    title: 'Advanced Surgery & Robotic Sciences',
+    subtitle: 'Minimally Invasive & Laparoscopic Surgical Institute',
+    bannerImage: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80',
+    overview: 'Center of excellence for minimally invasive laparoscopic, endoscopic, and robotic gastrointestinal, urological, and general surgical procedures.',
+    stats: [
+      { label: 'Keyhole Surgeries Performed', value: '14,000+' },
+      { label: 'Average Hospital Stay', value: '24 Hours' },
+    ],
+    technology: [
+      { name: '4K Ultra-HD Endoscopic Tower', desc: 'Crystal clear surgical magnification for keyhole procedures.', icon: 'Activity' },
+    ],
+    conditions: ['Gallstones & Hernias', 'Kidney Stones', 'GERD & Hiatal Hernia'],
+    procedures: [
+      { name: 'Single-Port Laparoscopic Cholecystectomy', desc: 'Gallbladder removal through a single belly-button incision.' },
+      { name: 'RIRS Laser Stone Surgery', desc: 'Incisionless laser dusting of kidney stones.' },
+    ],
+    facilities: ['4K HD Laparoscopic Suites', 'Short-Stay Surgical Day Care Unit'],
+    articles: [
+      {
+        title: 'Single-Port Laparoscopic Surgery: Stitchless Gallbladder Recovery',
+        category: 'LAPAROSCOPY',
+        readTime: '5 Min Read',
+        date: 'Sept 03, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'RIRS Laser Kidney Stone Removal: No Cuts, Fast Relief',
+        category: 'UROSURGERY',
+        readTime: '4 Min Read',
+        date: 'Aug 21, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What are the benefits of keyhole laparoscopic surgery?',
+        answer: 'Keyhole surgery leaves tiny 5mm cuts, causes minimal pain, reduces blood loss, and allows patients to go home within 24 hours.',
+      },
+    ],
+    associatedDoctorIds: ['doc-sanjay-patil', 'doc-vikram-sharma'],
+  },
+  {
+    slug: 'gastroenterology-hepatology',
+    title: 'Gastroenterology & Hepatology Institute',
+    subtitle: 'Digestive Endoscopy, ERCP & Liver Disease Center',
+    bannerImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    overview: 'Premier GI institute providing therapeutic ERCP, Endoscopic Ultrasound (EUS), fatty liver clinic, and comprehensive management of inflammatory bowel disease.',
+    stats: [
+      { label: 'Endoscopic Procedures', value: '18,000+' },
+      { label: 'ERCP Success Rate', value: '98.9%' },
+    ],
+    technology: [
+      { name: 'SpyGlass Cholangioscopy', desc: 'Direct 3D imaging inside bile ducts for precision stone breakdown.', icon: 'Activity' },
+    ],
+    conditions: ['Acid Reflux & GERD', 'Liver Cirrhosis & Fatty Liver', 'Gallstones & Pancreatitis'],
+    procedures: [
+      { name: 'Therapeutic ERCP & Stenting', desc: 'Incisionless bile duct stone removal and metallic stenting.' },
+      { name: 'Diagnostic & Therapeutic Colonoscopy', desc: 'Keyhole polyp removal and screening.' },
+    ],
+    facilities: ['Advanced GI Endoscopy Suite', '24/7 GI Bleed Emergency Unit'],
+    articles: [
+      {
+        title: 'Fatty Liver Disease: 5 Reversible Steps to Protect Your Liver',
+        category: 'HEPATOLOGY',
+        readTime: '4 Min Read',
+        date: 'Sept 03, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Understanding Acid Reflux: When to See a Gastroenterologist',
+        category: 'GASTROENTEROLOGY',
+        readTime: '5 Min Read',
+        date: 'Aug 19, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is ERCP used for?',
+        answer: 'ERCP combines endoscopy and X-ray imaging to treat bile duct blockages, gallstones, and jaundice without open surgery.',
+      },
+    ],
+    associatedDoctorIds: ['doc-anand-deshmukh'],
+  },
+  {
+    slug: 'nephrology-renal',
+    title: 'Nephrology & Renal Care Center',
+    subtitle: 'High-Efficiency Hemodialysis & Kidney Health',
+    bannerImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80',
+    overview: 'Comprehensive renal care institute providing ultra-pure hemodiafiltration, diabetic nephropathy reversal, and 24/7 acute kidney injury care.',
+    stats: [
+      { label: 'Dialysis Sessions Conducted', value: '45,000+' },
+      { label: 'Infection-Free Guarantee', value: '100%' },
+    ],
+    technology: [
+      { name: 'High-Efficiency Hemodiafiltration (HDF)', desc: 'Clears middle-molecule uremic toxins for superior patient vitality.', icon: 'ShieldCheck' },
+    ],
+    conditions: ['Chronic Kidney Disease (CKD)', 'Diabetic Nephropathy', 'Acute Renal Failure'],
+    procedures: [
+      { name: 'AV Fistula Creation & Care', desc: 'Vascular access surgery for long-term dialysis.' },
+      { name: 'Renal Biopsy', desc: 'Ultrasound-guided precision tissue sampling.' },
+    ],
+    facilities: ['HEPA Filtered Dialysis Lounge', '24/7 Continuous Renal Replacement Unit (CRRT)'],
+    articles: [
+      {
+        title: '10 Early Warning Signs Your Kidneys May Be Struggling',
+        category: 'NEPHROLOGY',
+        readTime: '5 Min Read',
+        date: 'Sept 04, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'HDF vs Standard Dialysis: Why Water Purity Matters',
+        category: 'DIALYSIS',
+        readTime: '4 Min Read',
+        date: 'Aug 26, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How does Hemodiafiltration (HDF) differ from standard dialysis?',
+        answer: 'HDF uses convection to eliminate larger metabolic toxins, resulting in better blood pressure control and less post-dialysis fatigue.',
+      },
+    ],
+    associatedDoctorIds: ['doc-sanjay-patil'],
+  },
+  {
+    slug: 'emergency-critical',
+    title: '24/7 Emergency & Level-1 Trauma Center',
+    subtitle: 'Golden Hour Ambulance, STEMI & Stroke Response',
+    bannerImage: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1200&q=80',
+    overview: '24/7 Emergency Medicine Department featuring advanced Cardiac ICU ambulances, trauma resuscitation bays, and immediate specialist call-out.',
+    stats: [
+      { label: 'Emergency Cases Managed', value: '25,000+' },
+      { label: 'Door-to-CT Stroke Time', value: '< 15 Mins' },
+    ],
+    technology: [
+      { name: 'ICU-on-Wheels Ambulance Fleet', desc: 'Mobile ventilators, ECG telemetry, and emergency physician transport.', icon: 'Activity' },
+    ],
+    conditions: ['Polytrauma & Road Accidents', 'Acute Cardiac Arrest', 'Acute Ischemic Stroke'],
+    procedures: [
+      { name: 'Emergency Trauma Resuscitation', desc: 'Rapid airway management and surgical stabilization.' },
+      { name: '24/7 Acute Thrombolysis', desc: 'Immediate clot-busting IV therapy for stroke and heart attack.' },
+    ],
+    facilities: ['Dedicated Triage & Resuscitation Bay', '24/7 Level-1 Trauma Operating Suite'],
+    articles: [
+      {
+        title: 'Golden Hour Emergency Care: What to Do During Acute Cardiac Arrest',
+        category: 'EMERGENCY CARE',
+        readTime: '4 Min Read',
+        date: 'Sept 04, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        title: 'Triage in Trauma: How Emergency Doctors Prioritize Critical Patients',
+        category: 'TRAUMA MEDICINE',
+        readTime: '5 Min Read',
+        date: 'Aug 14, 2026',
+        imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do I call a MEDICARE emergency ambulance?',
+        answer: 'Call our 24/7 Emergency Helpline 1800-MEDICARE for instant dispatch of a GPS-tracked ICU ambulance.',
+      },
+    ],
+    associatedDoctorIds: ['doc-anand-deshmukh'],
+  },
+];

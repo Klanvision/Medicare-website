@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Ultra-Crisp Vibrant Cyan Teal Gradient -->
+    <linearGradient id="vighnaTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="35%" stop-color="#00B4D8"/>
+      <stop offset="70%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+
+    <!-- Deep Metallic Blue Dark Accents -->
+    <linearGradient id="vighnaDeepTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+
+    <!-- Rich Metallic Gold Gradient -->
+    <linearGradient id="vighnaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEA79"/>
+      <stop offset="30%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+
+    <!-- Soft Ambient Shadow for 3D Depth -->
+    <filter id="crispShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#crispShadow)">
+    <!-- 1. TOP GOLDEN BINDU & CHANDRABINDU TILAK -->
+    <!-- Top Golden Dot (Bindu) -->
+    <circle cx="256" cy="42" r="11" fill="url(#vighnaGold)" />
+
+    <!-- Golden Crescent Curve (Chandrabindu) -->
+    <path d="M 232 64 C 248 76 264 76 280 64 C 268 70 244 70 232 64 Z" fill="url(#vighnaGold)" />
+
+    <!-- Forehead Golden Crown Arch -->
+    <path d="M 220 86 C 244 76 268 76 292 86 C 276 81 236 81 220 86 Z" fill="url(#vighnaGold)" />
+
+    <!-- 2. ELEGANT GOLDEN HALO ARC (RIGHT SIDE) -->
+    <path d="M 264 36 C 375 44 448 130 440 252 C 434 355 368 440 270 464" stroke="url(#vighnaGold)" stroke-width="10" stroke-linecap="round" fill="none" />
+
+    <!-- 3. LEFT EAR & HEART SHAPE SILHOUETTE (VIBRANT CYAN TEAL) -->
+    <path d="M 218 106 C 165 106 128 142 128 200 C 128 256 170 298 205 342 C 218 358 228 376 232 396 C 218 370 200 344 184 320 C 154 280 112 232 112 182 C 112 120 162 84 222 84 C 234 84 246 90 250 102 C 240 104 228 106 218 106 Z" fill="url(#vighnaTeal)" />
+
+    <!-- 4. MAIN GANESHA HEAD & TRUNK SWEEPS -->
+    <path d="M 250 102 C 278 106 302 128 302 164 C 302 202 274 234 252 266 C 230 296 210 326 210 362 C 210 408 244 442 286 462 C 324 480 364 472 382 450 C 346 470 300 464 266 444 C 232 422 204 386 204 344 C 204 302 230 264 258 230 C 284 198 322 158 322 118 C 322 86 292 76 250 102 Z" fill="url(#vighnaTeal)" />
+
+    <!-- 5. INNER TRUNK SHADOW & CONTOUR (DEEP TEAL) -->
+    <path d="M 258 230 C 224 272 180 320 180 370 C 180 430 232 478 295 478 C 342 478 384 452 400 416 C 374 444 332 458 290 458 C 240 458 198 420 198 372 C 198 332 234 288 270 248 Z" fill="url(#vighnaDeepTeal)" opacity="0.9" />
+
+    <!-- 6. GOLDEN EYE DETAIL -->
+    <path d="M 252 166 C 260 158 268 162 272 170" stroke="url(#vighnaGold)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+
+    <!-- 7. METALLIC GOLD MEDICAL CROSS (+) IN LOWER RIGHT BASE -->
+    <g transform="translate(296, 376)">
+      <!-- Outer Glow Ring -->
+      <circle cx="0" cy="0" r="32" fill="#000000" opacity="0.15" />
+      <!-- Medical Cross Vertical Bar -->
+      <rect x="-9" y="-26" width="18" height="52" rx="5" fill="url(#vighnaGold)" />
+      <!-- Medical Cross Horizontal Bar -->
+      <rect x="-26" y="-9" width="52" height="18" rx="5" fill="url(#vighnaGold)" />
+    </g>
+
+    <!-- 8. BOTTOM LEAF / HAND CRADLE BASE -->
+    <path d="M 246 458 C 288 478 340 484 388 458 C 352 486 294 486 246 458 Z" fill="url(#vighnaTeal)" />
+  </g>
+</svg>
